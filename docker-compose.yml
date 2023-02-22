@@ -10,3 +10,15 @@ services:
       NODE_ENV: dev
     ports:
       - "3000:3000"
+
+  db:
+    image: neo4j:latest
+    volumes:
+      - data:/data:delegated
+    environment:
+      NEO4J_AUTH: ${NEO4J_USERNAME:-username}/${NEO4J_PASSWORD:-password}
+
+
+volumes:
+  data:
+
