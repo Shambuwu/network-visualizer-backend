@@ -1,0 +1,13 @@
+name: test_application
+on: [pull_request, push]
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '19.6.1'
+      - run: npm install
+      - run: npm run test
