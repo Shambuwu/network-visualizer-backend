@@ -8,4 +8,4 @@ CMD ["npm", "run", "start:dev"]
 
 FROM base AS production
 COPY ./node_modules ./node_modules
-CMD ["npm", "run", "start:dev"]
+# Service should be started by NGINX when running as production
